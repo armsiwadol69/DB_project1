@@ -96,7 +96,7 @@ if($query) {
         });
       }
       function onPlayerReady(event) {
-        event.target.setVolume(0);
+        event.target.setVolume(10);
         event.target.playVideo();
       }
 
@@ -118,8 +118,8 @@ if($query) {
        </nav>
        <div class="jumbotron jumbotron-fluid" style="background:rgba(255,255,255,0.1)">
          <div class="container">
-           <h1 class="display-4 text-white">Result</h1>
-           <p class="lead text-white">DONE!</p>
+           <h1 class="display-4 text-white">Result : YOUR DATA HAS BEEN SUBMITTED!</h1>
+           <p class="lead text-white">Now go rest.</p>
          </div>
        </div>
        <div class="container">

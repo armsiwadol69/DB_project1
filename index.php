@@ -69,7 +69,7 @@ position: absolute;
         });
       }
       function onPlayerReady(event) {
-        event.target.setVolume(0);
+        event.target.setVolume(10);
         event.target.playVideo();
       }
 
