@@ -56,11 +56,6 @@ $sql = "INSERT INTO student_data(idstd,name,sname,nickname, sex,email,age,birthd
 VALUES('$idstd','$name','$sname','$nickname','$sex','$email','$age','$birthday','$password','$picture')";
 
 $query = mysqli_query($conn,$sql);
-if($query) {
-		echo "Record add successfully";
-	}
-
-	mysqli_close($conn);
 ?>
     <a name="start"></a>
     <div class="video-background" style="opacity:0.9;">
@@ -119,7 +114,11 @@ if($query) {
        <div class="jumbotron jumbotron-fluid" style="background:rgba(255,255,255,0.1)">
          <div class="container">
            <h1 class="display-4 text-white">Result : YOUR DATA HAS BEEN SUBMITTED!</h1>
-           <p class="lead text-white">Now go rest.</p>
+           <?php if($query) {
+           	echo "Record add successfully.";
+           	}
+
+           	mysqli_close($conn); ?>
          </div>
        </div>
        <div class="container">
