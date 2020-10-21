@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Result BETA</title>
+    <title>Result : DISPLAYED BETA</title>
     <link rel="stylesheet" href="bootstrap4_data\bootstrap.css">
     <link rel="stylesheet" href="bootstrap4_data\pagesty.css">
     <link rel="stylesheet" href="bootstrap4_data\bg_v.css">
@@ -30,7 +30,7 @@
   </head>
   <body>
     <?php
-    $idstd = $_POST["idstd"];
+    /*$idstd = $_POST["idstd"];
     $name = $_POST["name"];
     $sname = $_POST["sname"];
     $nickname = $_POST["nickname"];
@@ -39,7 +39,7 @@
     $age = $_POST["age"];
     $birthday = $_POST["birthday"];
     $password = $_POST["password"];
-    $picture = $_POST["picture"];
+    $picture = $_POST["picture"];*/
 
     $serverName = "localhost";
     $userName = "root";
@@ -52,10 +52,9 @@
    die('Could not Connect My Sql:' .mysql_error());
 }
 
-$sql = "INSERT INTO student_data(idstd,name,sname,nickname, sex,email,age,birthday,password,picture)
-VALUES('$idstd','$name','$sname','$nickname','$sex','$email','$age','$birthday','$password','$picture')";
-
+$sql = "SELECT * FROM student_data ORDER BY 'idstd' DESC";
 $query = mysqli_query($conn,$sql);
+$result = mysqli_query($conn, $sql);
 ?>
     <a name="start"></a>
     <div class="video-background" style="opacity:0.9;">
@@ -74,7 +73,7 @@ $query = mysqli_query($conn,$sql);
         player = new YT.Player('player', {
           height: '1920',
           width: '1080',
-          videoId: '5xfNTyy-Xhk',
+          videoId: '2m5NVQnDH58',
           events: {
             'onReady': onPlayerReady,
             'onStateChange': onPlayerStateChange
@@ -84,7 +83,7 @@ $query = mysqli_query($conn,$sql);
        'controls': 0,
        'rel' : 0,
        'fs' : 0,
-       'playlist': '5xfNTyy-Xhk',
+       'playlist': '2m5NVQnDH58',
        'loop' : 1,
 
    },
@@ -113,84 +112,58 @@ $query = mysqli_query($conn,$sql);
        </nav>
        <div class="jumbotron jumbotron-fluid" style="background:rgba(255,255,255,0.1);max-height:250px">
          <div class="container">
-           <h1 class="text-white">Result : YOUR DATA WAS SUCCESSFULLY SAVED.</h1>
+           <h1 class=" text-white">Result : ALL DATA WAS SUCCESSFULLY DISPLAYED.</h1>
            <?php if($query) {
-           	echo "Record add successfully.";
+           	echo "Record displayed successfully.";
            	}
 
            	mysqli_close($conn); ?>
          </div>
        </div>
-       <div class="container">
+       <div class="container-fluid">
          <div class="row row-break">
            <div class="col-12">
              <div class="alert alert-warning" role="alert">
-     Now playing : ツユ - ナミカレ
+     Now playing : 携帯恋話／まふまふ 歌ってみた ver.月乃 - cover
    </div>
            </div>
          </div>
 
          <div class="row row-break">
            <div class="col-12">
-             <div class="card w-100 h-100">
+             <div class="card w-100">
      <div class="card-body">
+       <table class="table table-hover">
+                    <tr>
+                    <td>Student ID</td>
+                    <td>Name</td>
+                    <td>Nickname</td>
+                    <td>Nickname</td>
+                    <td>Gender</td>
+                    <td>E-mail</td>
+                    <td>Age</td>
+                    <td>Birthday</td>
+                    <td>Password</td>
+                    <td>Picture</td>
+                  </tr>
+                <?php
+                $passwordfix = "*******" ;
+                while($row = mysqli_fetch_array($result)) {
+                echo "<tr>";
+                echo "<td>" .$row["idstd"] .  "</td> ";
+                echo "<td>" .$row["name"] .  "</td> ";
+                echo "<td>" .$row["sname"] .  "</td> ";
+                echo "<td>" .$row["nickname"] .  "</td> ";
+                echo "<td>" .$row["sex"] .  "</td> ";
+                echo "<td>" .$row["email"] .  "</td> ";
+                echo "<td>" .$row["age"] .  "</td> ";
+                echo "<td>" .$row["birthday"] .  "</td> ";
+                echo "<td>" .$passwordfix . "</td> ";
+                echo "<td>" .$row["picture"] .  "</td> ";
 
-         <form method="post" action="submit_re.php">
-         <div class="form-row">
-           <div class="form-group col-md-4">
-             <label for="idstd">Student ID</label>
-             <input type="text" readonly class="form-control-plaintext" value="<?php echo $idstd;  ?>">
-  </div>
-
-           <div class="form-group col-md-4">
-             <label for="name">First Name</label>
-             <input type="text" readonly class="form-control-plaintext" value="<?php echo $name;  ?>">
-           </div>
-           <div class="form-group col-md-4">
-             <label for="sname">Surname</label>
-             <input type="text" readonly class="form-control-plaintext" value="<?php echo $sname;  ?>">
-           </div>
-         </div>
-         <div class="form-row">
-           <div class="form-group col-md-4">
-             <label for="nickname">NickName</label>
-             <input type="text" readonly class="form-control-plaintext" value="<?php echo $nickname;  ?>">
-           </div>
-           <div class="form-group col-md-4">
-             <label for="sex">Gender</label>
-             <input type="text" readonly class="form-control-plaintext" value="<?php echo $sex;  ?>">
-           </div>
-           <div class="form-group col-md-4">
-             <label for="email">E-Mail</label>
-             <input type="text" readonly class="form-control-plaintext" value="<?php echo $email;  ?>">
-           </div>
-         </div>
-         <div class="form-row">
-           <div class="form-group col-md-4">
-             <label for="age">Age</label>
-             <input type="text" readonly class="form-control-plaintext" value="<?php echo $age;  ?>">
-           </div>
-           <div class="form-group col-3">
-             <label for="birthday">Birthday</label>
-             <input type="text" readonly class="form-control-plaintext" value="<?php echo $birthday;  ?>">
-           </div>
-           <div class="form-group col-5">
-             <label for="inputName">Password</label>
-             <input type="text" readonly class="form-control-plaintext" value="Confidential">
-           </div>
-         </div>
-
-         <div class="form-group">
-      <label for="picture">Upload Photo</label>
-      <input type="text" readonly class="form-control-plaintext" value="<?php echo $picture;  ?>">
-    </div>
-
-         <div class="form-group">
-         </div>
-         <button hidden type="submit" class="btn btn-block btn-primary">Submit</button>
-
-       </form>
-
+                };
+                ?>
+       </table>
 
 
 
@@ -198,7 +171,6 @@ $query = mysqli_query($conn,$sql);
    </div>
 
            </div>
-
          </div>
          <div class="row row-break">
            <div class="col-12">
@@ -217,7 +189,6 @@ $query = mysqli_query($conn,$sql);
          </div>
        <h1 style="margin-bottom:1000px"></h1>
        <div class="" style="text-align:center;">
-         <a type="button" href="index.php" class="btn btn-info shadow-sm" style="">Back To INDEX</a> <br>
          <a href="#start"><button type="button" class="btn btn-outline-light" style="opacity:0.5;">Back To Top</button></a>
          <br> <br>
          <a name="bgimg"></a> <h4 style="color:rgba(0,0,0,0.5)">For View BackgrounD</h4>

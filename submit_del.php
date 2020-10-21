@@ -31,7 +31,7 @@
   <body>
     <?php
     $idstd = $_POST["idstd"];
-    $name = $_POST["name"];
+    /*$name = $_POST["name"];
     $sname = $_POST["sname"];
     $nickname = $_POST["nickname"];
     $sex = $_POST["sex"];
@@ -39,7 +39,7 @@
     $age = $_POST["age"];
     $birthday = $_POST["birthday"];
     $password = $_POST["password"];
-    $picture = $_POST["picture"];
+    $picture = $_POST["picture"];*/
 
     $serverName = "localhost";
     $userName = "root";
@@ -52,8 +52,21 @@
    die('Could not Connect My Sql:' .mysql_error());
 }
 
-$sql = "INSERT INTO student_data(idstd,name,sname,nickname, sex,email,age,birthday,password,picture)
-VALUES('$idstd','$name','$sname','$nickname','$sex','$email','$age','$birthday','$password','$picture')";
+/*$sql = "INSERT INTO student_data(idstd,name,sname,nickname, sex,email,age,birthday,password,picture)
+VALUES('$idstd','$name','$sname','$nickname','$sex','$email','$age','$birthday','$password','$picture')"; */
+
+/*$sql = "UPDATE student_data SET
+			name = '$name' ,
+			sname = '$sname' ,
+			nickname = '$nickname' ,
+      sex = '$sex' ,
+      email = '$email' ,
+      age = '$age' ,
+      birthday = '$birthday' ,
+      password = '$password' ,
+      picture = '$picture'
+			WHERE idstd = $idstd"; */
+$sql = "DELETE FROM student_data WHERE idstd = $idstd";
 
 $query = mysqli_query($conn,$sql);
 ?>
@@ -74,7 +87,7 @@ $query = mysqli_query($conn,$sql);
         player = new YT.Player('player', {
           height: '1920',
           width: '1080',
-          videoId: '5xfNTyy-Xhk',
+          videoId: 'D0ehC_8sQuU',
           events: {
             'onReady': onPlayerReady,
             'onStateChange': onPlayerStateChange
@@ -84,7 +97,7 @@ $query = mysqli_query($conn,$sql);
        'controls': 0,
        'rel' : 0,
        'fs' : 0,
-       'playlist': '5xfNTyy-Xhk',
+       'playlist': 'D0ehC_8sQuU',
        'loop' : 1,
 
    },
@@ -113,9 +126,9 @@ $query = mysqli_query($conn,$sql);
        </nav>
        <div class="jumbotron jumbotron-fluid" style="background:rgba(255,255,255,0.1);max-height:250px">
          <div class="container">
-           <h1 class="text-white">Result : YOUR DATA WAS SUCCESSFULLY SAVED.</h1>
+           <h1 class="text-white">Result : YOUR DATA WAS SUCCESSFULLY DELETED.</h1>
            <?php if($query) {
-           	echo "Record add successfully.";
+           	echo "Record DELETED successfully.";
            	}
 
            	mysqli_close($conn); ?>
@@ -125,7 +138,7 @@ $query = mysqli_query($conn,$sql);
          <div class="row row-break">
            <div class="col-12">
              <div class="alert alert-warning" role="alert">
-     Now playing : ツユ - ナミカレ
+     Now playing : ツユ - やっぱり雨は降るんだね
    </div>
            </div>
          </div>
@@ -133,61 +146,15 @@ $query = mysqli_query($conn,$sql);
          <div class="row row-break">
            <div class="col-12">
              <div class="card w-100 h-100">
-     <div class="card-body">
-
+     <div class="card-body" style="text-align:center;">
+         <h2 class="text-danger">DATA OF <?php echo $idstd;  ?> WAS SUCCESSFULLY DELETED.</h2>
          <form method="post" action="submit_re.php">
          <div class="form-row">
-           <div class="form-group col-md-4">
+           <div class="form-group col-12">
              <label for="idstd">Student ID</label>
-             <input type="text" readonly class="form-control-plaintext" value="<?php echo $idstd;  ?>">
+             <input style="text-align:center;" type="text" readonly class="form-control-plaintext" value="<?php echo $idstd;  ?>">
   </div>
 
-           <div class="form-group col-md-4">
-             <label for="name">First Name</label>
-             <input type="text" readonly class="form-control-plaintext" value="<?php echo $name;  ?>">
-           </div>
-           <div class="form-group col-md-4">
-             <label for="sname">Surname</label>
-             <input type="text" readonly class="form-control-plaintext" value="<?php echo $sname;  ?>">
-           </div>
-         </div>
-         <div class="form-row">
-           <div class="form-group col-md-4">
-             <label for="nickname">NickName</label>
-             <input type="text" readonly class="form-control-plaintext" value="<?php echo $nickname;  ?>">
-           </div>
-           <div class="form-group col-md-4">
-             <label for="sex">Gender</label>
-             <input type="text" readonly class="form-control-plaintext" value="<?php echo $sex;  ?>">
-           </div>
-           <div class="form-group col-md-4">
-             <label for="email">E-Mail</label>
-             <input type="text" readonly class="form-control-plaintext" value="<?php echo $email;  ?>">
-           </div>
-         </div>
-         <div class="form-row">
-           <div class="form-group col-md-4">
-             <label for="age">Age</label>
-             <input type="text" readonly class="form-control-plaintext" value="<?php echo $age;  ?>">
-           </div>
-           <div class="form-group col-3">
-             <label for="birthday">Birthday</label>
-             <input type="text" readonly class="form-control-plaintext" value="<?php echo $birthday;  ?>">
-           </div>
-           <div class="form-group col-5">
-             <label for="inputName">Password</label>
-             <input type="text" readonly class="form-control-plaintext" value="Confidential">
-           </div>
-         </div>
-
-         <div class="form-group">
-      <label for="picture">Upload Photo</label>
-      <input type="text" readonly class="form-control-plaintext" value="<?php echo $picture;  ?>">
-    </div>
-
-         <div class="form-group">
-         </div>
-         <button hidden type="submit" class="btn btn-block btn-primary">Submit</button>
 
        </form>
 
@@ -199,6 +166,7 @@ $query = mysqli_query($conn,$sql);
 
            </div>
 
+         </div>
          </div>
          <div class="row row-break">
            <div class="col-12">

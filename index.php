@@ -7,8 +7,8 @@
     <link rel="stylesheet" href="bootstrap4_data\pagesty.css">
     <link rel="stylesheet" href="bootstrap4_data\bg_v.css">
     <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
-    <script type="text/javascript" src="bootstrap4_data\bootstrap.js"></script>
     <script type="text/javascript" src="bootstrap4_data\jquery-3.5.1.min.js"></script>
+    <script type="text/javascript" src="bootstrap4_data\bootstrap.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
 <link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
@@ -84,9 +84,9 @@ position: absolute;
     </div>
   </div>
     <nav class="navbar navbar-dark bg-dark">
-         <a class="navbar-brand" >
+         <a class="navbar-brand" href="index.php">
            <img src="favicon\favicon-96x96.png" width="30" height="30" class="d-inline-block align-top rounded" alt="" loading="lazy" hidden>
-           Register BETA | SiX HexenjagD | ACP II
+           Register BETA | SiX BLANCNEIGE | ACP II
          </a>
        </nav>
        <div class="jumbotron jumbotron-fluid" style="background:rgba(255,255,255,0.1)">
@@ -183,6 +183,20 @@ position: absolute;
          </div>
          <div class="row row-break">
            <div class="col-12">
+
+
+           <div class="card w-100">
+             <div class="card-body">
+             <a href="update_data.php" type="button" class="btn btn-block btn-secondary">Update Data</a>
+             <a href="del_data.php" type="button" class="btn btn-block btn-danger">Delete Data</a>
+             <a href="view_data.php" type="button" class="btn btn-block btn-info">View Data</a>
+             <a href="dataall_view.php" type="button" class="btn btn-block btn-info">View ALL Data</a>
+             </div>
+           </div>
+         </div>
+         </div>
+         <div class="row row-break">
+           <div class="col-12">
              <div class="alert alert-info" role="alert">
      Siwadol M. | ACP II
    </div>
@@ -200,8 +214,8 @@ position: absolute;
          <a href="#start"><button type="button" class="btn btn-outline-light" style="opacity:0.5;">Back To Top</button></a>
          <br> <br>
          <a name="bgimg"></a> <h4 style="color:rgba(0,0,0,0.5)">For View BackgrounD</h4>
-
        </div>
+
        </div>
        <?php
       /* $n1 = "Siwadol Malisorn";

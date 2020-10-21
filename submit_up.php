@@ -52,8 +52,20 @@
    die('Could not Connect My Sql:' .mysql_error());
 }
 
-$sql = "INSERT INTO student_data(idstd,name,sname,nickname, sex,email,age,birthday,password,picture)
-VALUES('$idstd','$name','$sname','$nickname','$sex','$email','$age','$birthday','$password','$picture')";
+/*$sql = "INSERT INTO student_data(idstd,name,sname,nickname, sex,email,age,birthday,password,picture)
+VALUES('$idstd','$name','$sname','$nickname','$sex','$email','$age','$birthday','$password','$picture')"; */
+
+$sql = "UPDATE student_data SET
+			name = '$name' ,
+			sname = '$sname' ,
+			nickname = '$nickname' ,
+      sex = '$sex' ,
+      email = '$email' ,
+      age = '$age' ,
+      birthday = '$birthday' ,
+      password = '$password' ,
+      picture = '$picture'
+			WHERE idstd = $idstd";
 
 $query = mysqli_query($conn,$sql);
 ?>
@@ -74,7 +86,7 @@ $query = mysqli_query($conn,$sql);
         player = new YT.Player('player', {
           height: '1920',
           width: '1080',
-          videoId: '5xfNTyy-Xhk',
+          videoId: 'lGFEqEFJ410',
           events: {
             'onReady': onPlayerReady,
             'onStateChange': onPlayerStateChange
@@ -84,7 +96,7 @@ $query = mysqli_query($conn,$sql);
        'controls': 0,
        'rel' : 0,
        'fs' : 0,
-       'playlist': '5xfNTyy-Xhk',
+       'playlist': 'lGFEqEFJ410',
        'loop' : 1,
 
    },
@@ -113,9 +125,9 @@ $query = mysqli_query($conn,$sql);
        </nav>
        <div class="jumbotron jumbotron-fluid" style="background:rgba(255,255,255,0.1);max-height:250px">
          <div class="container">
-           <h1 class="text-white">Result : YOUR DATA WAS SUCCESSFULLY SAVED.</h1>
+           <h1 class="text-white">Result : YOUR DATA WAS SUCCESSFULLY UPDATED.</h1>
            <?php if($query) {
-           	echo "Record add successfully.";
+           	echo "Record UPDATED successfully.";
            	}
 
            	mysqli_close($conn); ?>
@@ -217,7 +229,6 @@ $query = mysqli_query($conn,$sql);
          </div>
        <h1 style="margin-bottom:1000px"></h1>
        <div class="" style="text-align:center;">
-         <a type="button" href="index.php" class="btn btn-info shadow-sm" style="">Back To INDEX</a> <br>
          <a href="#start"><button type="button" class="btn btn-outline-light" style="opacity:0.5;">Back To Top</button></a>
          <br> <br>
          <a name="bgimg"></a> <h4 style="color:rgba(0,0,0,0.5)">For View BackgrounD</h4>
