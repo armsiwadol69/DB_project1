@@ -6,10 +6,7 @@
     <link rel="stylesheet" href="bootstrap4_data\bootstrap.css">
     <link rel="stylesheet" href="bootstrap4_data\pagesty.css">
     <link rel="stylesheet" href="bootstrap4_data\bg_v.css">
-<<<<<<< HEAD
     <link rel="stylesheet" href="bootstrap4_data\sipage.css">
-=======
->>>>>>> 7e9000777a263ad8ed853fafb6e9bf9159fdcc1e
     <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
     <script type="text/javascript" src="bootstrap4_data\jquery-3.5.1.min.js"></script>
     <script type="text/javascript" src="bootstrap4_data\bootstrap.js"></script>
@@ -31,12 +28,9 @@
 <meta name="msapplication-TileColor" content="#ffffff">
 <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
 <meta name="theme-color" content="#ffffff">
-<<<<<<< HEAD
 <style media="screen">
   .btn-be {margin-left: 10px;}
 </style>
-=======
->>>>>>> 7e9000777a263ad8ed853fafb6e9bf9159fdcc1e
   </head>
   <body>
     <?php
@@ -50,18 +44,8 @@
     $birthday = $_POST["birthday"];
     $password = $_POST["password"];
     $picture = $_POST["picture"];*/
-<<<<<<< HEAD
     include $_SERVER['DOCUMENT_ROOT'].'/DB_project1/conn.php';
 
-=======
-
-    $serverName = "localhost";
-    $userName = "root";
-    $userPassword = "";
-    $dbName = "member";
-
-    $conn = mysqli_connect($serverName,$userName,$userPassword,$dbName);
->>>>>>> 7e9000777a263ad8ed853fafb6e9bf9159fdcc1e
 
     if(!$conn){
    die('Could not Connect My Sql:' .mysql_error());
@@ -72,11 +56,7 @@ $query = mysqli_query($conn,$sql);
 $result = mysqli_query($conn, $sql);
 ?>
     <a name="start"></a>
-<<<<<<< HEAD
     <div class="video-background" style="opacity:0.5;">
-=======
-    <div class="video-background" style="opacity:0.9;">
->>>>>>> 7e9000777a263ad8ed853fafb6e9bf9159fdcc1e
     <div class="video-foreground">
       <div id="player">
       </div>
@@ -123,16 +103,11 @@ $result = mysqli_query($conn, $sql);
     </script>
     </div>
   </div>
-<<<<<<< HEAD
     <nav class="navbar navbar-dark shadow">
-=======
-    <nav class="navbar navbar-dark bg-dark">
->>>>>>> 7e9000777a263ad8ed853fafb6e9bf9159fdcc1e
          <a class="navbar-brand" href="index.php">
            <img src="favicon\favicon-96x96.png" width="30" height="30" class="d-inline-block align-top rounded" alt="" loading="lazy" hidden>
            Register BETA | SiX BLANCNEIGE | ACP II
          </a>
-<<<<<<< HEAD
          <ul class="navbar-nav mr-auto">
       <li class="nav-item">
         <a class="nav-link disabled" style="color:white;" aria-disabled="true"> <?php include $_SERVER['DOCUMENT_ROOT'].'/DB_project1/notuse/version.php'; echo "VERSION : ","$version"; ?> </a>
@@ -149,12 +124,6 @@ $result = mysqli_query($conn, $sql);
        <div class="jumbotron jumbotron-fluid" style="background:rgba(255,255,255,0.1);max-height:250px">
          <div class="container">
            <h1 class=" text-dark">Result : ALL DATA WAS SUCCESSFULLY DISPLAYED.</h1>
-=======
-       </nav>
-       <div class="jumbotron jumbotron-fluid" style="background:rgba(255,255,255,0.1);max-height:250px">
-         <div class="container">
-           <h1 class=" text-white">Result : ALL DATA WAS SUCCESSFULLY DISPLAYED.</h1>
->>>>>>> 7e9000777a263ad8ed853fafb6e9bf9159fdcc1e
            <?php if($query) {
            	echo "Record displayed successfully.";
            	}

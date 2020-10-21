@@ -6,10 +6,7 @@
     <link rel="stylesheet" href="bootstrap4_data\bootstrap.css">
     <link rel="stylesheet" href="bootstrap4_data\pagesty.css">
     <link rel="stylesheet" href="bootstrap4_data\bg_v.css">
-<<<<<<< HEAD
     <link rel="stylesheet" href="bootstrap4_data\sipage.css">
-=======
->>>>>>> 7e9000777a263ad8ed853fafb6e9bf9159fdcc1e
     <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
     <script type="text/javascript" src="bootstrap4_data\jquery-3.5.1.min.js"></script>
     <script type="text/javascript" src="bootstrap4_data\bootstrap.js"></script>
@@ -32,12 +29,9 @@
 <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
 <meta name="theme-color" content="#ffffff">
 <style media="screen">
-<<<<<<< HEAD
   .btn-be {margin-left: 10px;}
 </style>
 <style media="screen">
-=======
->>>>>>> 7e9000777a263ad8ed853fafb6e9bf9159fdcc1e
 .file {
 visibility: hidden;
 position: absolute;
@@ -93,16 +87,11 @@ position: absolute;
     </script>
     </div>
   </div>
-<<<<<<< HEAD
     <nav class="navbar navbar-dark shadow">
-=======
-    <nav class="navbar navbar-dark bg-dark">
->>>>>>> 7e9000777a263ad8ed853fafb6e9bf9159fdcc1e
          <a class="navbar-brand" href="index.php">
            <img src="favicon\favicon-96x96.png" width="30" height="30" class="d-inline-block align-top rounded" alt="" loading="lazy" hidden>
            Register BETA | SiX BLANCNEIGE | ACP II
          </a>
-<<<<<<< HEAD
          <ul class="navbar-nav mr-auto">
       <li class="nav-item">
         <a class="nav-link disabled" style="color:white;" aria-disabled="true"> <?php include $_SERVER['DOCUMENT_ROOT'].'/DB_project1/notuse/version.php'; echo "VERSION : ","$version"; ?> </a>
@@ -115,8 +104,6 @@ position: absolute;
       <a href="view_data.php" type="button" class="btn btn-be btn-info">View Specific ID Data</a>
       <a href="dataall_view.php" type="button" class="btn btn-be btn-info">View ALL Data</a>
    </form>
-=======
->>>>>>> 7e9000777a263ad8ed853fafb6e9bf9159fdcc1e
        </nav>
        <div class="jumbotron jumbotron-fluid" style="background:rgba(255,255,255,0.1)">
          <div class="container">
@@ -144,16 +131,11 @@ position: absolute;
              <label for="idstd">Student ID</label>
              <input type="text" class="form-control" name="idstd" placeholder="13 Digit">
            </div>
-<<<<<<< HEAD
            <div class="form-group col-md-4">
              <label for="idstd">MUST MATCH!</label>
              <input type="text" readonly class="form-control-plaintext" value="Student ID MUST MACTH EXIST DATA.">
            </div>
 <button type="submit" class="btn btn-block btn-info">View Data</button>
-=======
-
-<button type="submit" class="btn btn-block btn-danger">View Data</button>
->>>>>>> 7e9000777a263ad8ed853fafb6e9bf9159fdcc1e
        </form>
      </div>
    </div>
