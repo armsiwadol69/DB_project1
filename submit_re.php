@@ -6,9 +6,10 @@
     <link rel="stylesheet" href="bootstrap4_data\bootstrap.css">
     <link rel="stylesheet" href="bootstrap4_data\pagesty.css">
     <link rel="stylesheet" href="bootstrap4_data\bg_v.css">
+    <link rel="stylesheet" href="bootstrap4_data\sipage.css">
     <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
-    <script type="text/javascript" src="bootstrap4_data\bootstrap.js"></script>
     <script type="text/javascript" src="bootstrap4_data\jquery-3.5.1.min.js"></script>
+    <script type="text/javascript" src="bootstrap4_data\bootstrap.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
 <link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
@@ -27,6 +28,9 @@
 <meta name="msapplication-TileColor" content="#ffffff">
 <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
 <meta name="theme-color" content="#ffffff">
+<style media="screen">
+  .btn-be {margin-left: 10px;}
+</style>
   </head>
   <body>
     <?php
@@ -41,12 +45,7 @@
     $password = $_POST["password"];
     $picture = $_POST["picture"];
 
-    $serverName = "localhost";
-    $userName = "root";
-    $userPassword = "";
-    $dbName = "memner";
-
-    $conn = mysqli_connect($serverName,$userName,$userPassword,$dbName);
+    include $_SERVER['DOCUMENT_ROOT'].'/DB_project1/conn.php';
 
     if(!$conn){
    die('Could not Connect My Sql:' .mysql_error());
@@ -105,15 +104,27 @@ $query = mysqli_query($conn,$sql);
     </script>
     </div>
   </div>
-    <nav class="navbar navbar-dark bg-dark">
-         <a class="navbar-brand" href="#">
+    <nav class="navbar navbar-dark shadow">
+         <a class="navbar-brand" href="index.php">
            <img src="favicon\favicon-96x96.png" width="30" height="30" class="d-inline-block align-top rounded" alt="" loading="lazy" hidden>
-           Register BETA | SiX HexenjagD | ACP II
+           Register BETA | SiX BLANCNEIGE | ACP II
          </a>
+         <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link disabled" style="color:white;" aria-disabled="true"> <?php include $_SERVER['DOCUMENT_ROOT'].'/DB_project1/notuse/version.php'; echo "VERSION : ","$version"; ?> </a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <a href="index.php" type="button" class="btn btn-be btn-primary">Home</a>
+      <a href="update_data.php" type="button" class="btn btn-be btn-secondary">Update Data</a>
+      <a href="del_data.php" type="button" class="btn btn-be btn-danger">Delete Data</a>
+      <a href="view_data.php" type="button" class="btn btn-be btn-info">View Specific ID Data</a>
+      <a href="dataall_view.php" type="button" class="btn btn-be btn-info">View ALL Data</a>
+   </form>
        </nav>
-       <div class="jumbotron jumbotron-fluid" style="background:rgba(255,255,255,0.1)">
+       <div class="jumbotron jumbotron-fluid" style="background:rgba(255,255,255,0.1);max-height:250px">
          <div class="container">
-           <h1 class="display-4 text-white">Result : YOUR DATA HAS BEEN SUBMITTED!</h1>
+           <h1 class="text-white">Result : YOUR DATA WAS SUCCESSFULLY SAVED.</h1>
            <?php if($query) {
            	echo "Record add successfully.";
            	}
@@ -209,7 +220,7 @@ $query = mysqli_query($conn,$sql);
          </div>
          <div class="row row-break">
            <div class="col-12" style="text-align: center">
-            <a type="button" href="index.php" class="btn btn-info shadow-sm" style="">Back To INDEX</a> <br>
+            <a type="button" href="index.php" class="btn btn-info shadow-sm" style="">Back To INDEX</a> <br> <br>
             <a type="button" href="#bgimg" class="btn btn-info shadow-sm" style="margin-top:10px">View Background Video</a> <br>
             <h3 style="color:white;">ชาติ ศาสนา อาจารย์จุ๋ม</h3> <br>
             <img class="rounded shadow" src="img/tjum12.jpg" style="max-width:350px" width="100%" alt="">
@@ -217,6 +228,7 @@ $query = mysqli_query($conn,$sql);
          </div>
        <h1 style="margin-bottom:1000px"></h1>
        <div class="" style="text-align:center;">
+         <a type="button" href="index.php" class="btn btn-info shadow-sm" style="">Back To INDEX</a> <br>
          <a href="#start"><button type="button" class="btn btn-outline-light" style="opacity:0.5;">Back To Top</button></a>
          <br> <br>
          <a name="bgimg"></a> <h4 style="color:rgba(0,0,0,0.5)">For View BackgrounD</h4>

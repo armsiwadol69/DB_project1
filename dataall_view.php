@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Home BETA</title>
+    <title>Result : DISPLAYED BETA</title>
     <link rel="stylesheet" href="bootstrap4_data\bootstrap.css">
     <link rel="stylesheet" href="bootstrap4_data\pagesty.css">
     <link rel="stylesheet" href="bootstrap4_data\bg_v.css">
@@ -29,15 +29,34 @@
 <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
 <meta name="theme-color" content="#ffffff">
 <style media="screen">
-.file {
-visibility: hidden;
-position: absolute;
-}
+  .btn-be {margin-left: 10px;}
 </style>
   </head>
   <body>
+    <?php
+    /*$idstd = $_POST["idstd"];
+    $name = $_POST["name"];
+    $sname = $_POST["sname"];
+    $nickname = $_POST["nickname"];
+    $sex = $_POST["sex"];
+    $email = $_POST["email"];
+    $age = $_POST["age"];
+    $birthday = $_POST["birthday"];
+    $password = $_POST["password"];
+    $picture = $_POST["picture"];*/
+    include $_SERVER['DOCUMENT_ROOT'].'/DB_project1/conn.php';
+
+
+    if(!$conn){
+   die('Could not Connect My Sql:' .mysql_error());
+}
+
+$sql = "SELECT * FROM student_data ORDER BY 'idstd' DESC";
+$query = mysqli_query($conn,$sql);
+$result = mysqli_query($conn, $sql);
+?>
     <a name="start"></a>
-    <div class="video-background" style="opacity:0.9;">
+    <div class="video-background" style="opacity:0.5;">
     <div class="video-foreground">
       <div id="player">
       </div>
@@ -53,7 +72,7 @@ position: absolute;
         player = new YT.Player('player', {
           height: '1920',
           width: '1080',
-          videoId: '4QXCPuwBz2E',
+          videoId: '2m5NVQnDH58',
           events: {
             'onReady': onPlayerReady,
             'onStateChange': onPlayerStateChange
@@ -63,7 +82,7 @@ position: absolute;
        'controls': 0,
        'rel' : 0,
        'fs' : 0,
-       'playlist': '4QXCPuwBz2E',
+       'playlist': '2m5NVQnDH58',
        'loop' : 1,
 
    },
@@ -102,111 +121,67 @@ position: absolute;
       <a href="dataall_view.php" type="button" class="btn btn-be btn-info">View ALL Data</a>
    </form>
        </nav>
-       <div class="jumbotron jumbotron-fluid" style="background:rgba(255,255,255,0.1)">
+       <div class="jumbotron jumbotron-fluid" style="background:rgba(255,255,255,0.1);max-height:250px">
          <div class="container">
-           <h1 class="display-4 text-white">Register BETA</h1>
-           <p class="lead text-white">Fill all box below!</p>
+           <h1 class=" text-dark">Result : ALL DATA WAS SUCCESSFULLY DISPLAYED.</h1>
+           <?php if($query) {
+           	echo "Record displayed successfully.";
+           	}
+
+           	mysqli_close($conn); ?>
          </div>
        </div>
-       <div class="container">
+       <div class="container-fluid">
          <div class="row row-break">
            <div class="col-12">
              <div class="alert alert-warning" role="alert">
-     Now playing : ツユ - あの世行きのバスに乗ってさらば。
+     Now playing : 携帯恋話／まふまふ 歌ってみた ver.月乃 - cover
    </div>
            </div>
          </div>
 
          <div class="row row-break">
            <div class="col-12">
-             <div class="card w-100 h-100">
+             <div class="card w-100">
      <div class="card-body">
+       <table class="table table-hover">
+                    <tr>
+                    <td>Student ID</td>
+                    <td>Name</td>
+                    <td>Nickname</td>
+                    <td>Nickname</td>
+                    <td>Gender</td>
+                    <td>E-mail</td>
+                    <td>Age</td>
+                    <td>Birthday</td>
+                    <td>Password</td>
+                    <td>Picture</td>
+                  </tr>
+                <?php
+                $passwordfix = "*******" ;
+                while($row = mysqli_fetch_array($result)) {
+                echo "<tr>";
+                echo "<td>" .$row["idstd"] .  "</td> ";
+                echo "<td>" .$row["name"] .  "</td> ";
+                echo "<td>" .$row["sname"] .  "</td> ";
+                echo "<td>" .$row["nickname"] .  "</td> ";
+                echo "<td>" .$row["sex"] .  "</td> ";
+                echo "<td>" .$row["email"] .  "</td> ";
+                echo "<td>" .$row["age"] .  "</td> ";
+                echo "<td>" .$row["birthday"] .  "</td> ";
+                echo "<td>" .$passwordfix . "</td> ";
+                echo "<td>" .$row["picture"] .  "</td> ";
 
-         <form method="post" action="submit_re.php">
-         <div class="form-row">
-           <div class="form-group col-md-4">
-             <label for="idstd">Student ID</label>
-             <input type="text" class="form-control" name="idstd" placeholder="13 Digit">
-           </div>
-           <div class="form-group col-md-4">
-             <label for="name">First Name</label>
-             <input type="text" class="form-control" name="name">
-           </div>
-           <div class="form-group col-md-4">
-             <label for="sname">Surname</label>
-             <input type="text" class="form-control" name="sname">
-           </div>
-         </div>
-         <div class="form-row">
-           <div class="form-group col-md-4">
-             <label for="nickname">NickName</label>
-             <input type="text" class="form-control" name="nickname">
-           </div>
-           <div class="form-group col-md-4">
-             <label for="sex">Gender</label>
-             <select name="sex" class="form-control">
-        <option selected>Choose...</option>
-        <option>Male</option>
-        <option>Female</option>
-        <option>Other</option>
-      </select>
-           </div>
-           <div class="form-group col-md-4">
-             <label for="email">E-Mail</label>
-             <input type="email" class="form-control" name="email" placeholder="yourmomgay@example.com">
-           </div>
-         </div>
-         <div class="form-row">
-           <div class="form-group col-md-4">
-             <label for="age">Age</label>
-             <input type="text" class="form-control" name="age">
-           </div>
-           <div class="form-group col-3">
-             <label for="birthday">Birthday</label>
-             <input type="date" class="form-control" name="birthday">
-           </div>
-           <div class="form-group col-5">
-             <label for="inputName">Password</label>
-             <input type="text" class="form-control" name="password" placeholder="YOURMOMGAY">
-           </div>
-         </div>
-         <button hidden type="submit" class="btn btn-block btn-primary">Submit</button>
-         <div class="form-group">
-           <label for="picture">Upload Image</label>
-    <input type="file" name="picture" class="file" accept="image/*">
-    <div class="input-group my-3">
+                };
+                ?>
+       </table>
 
-      <input type="text" class="form-control" disabled placeholder="Upload File" name="picture">
-      <div class="input-group-append">
-        <button type="button" class="browse btn btn-primary">Browse...</button>
-      </div>
-    </div>
-  </div>
-<div class="">
-  <img src="https://placehold.it/80x80" id="preview" class="img-thumbnail">
-</div>
-<br>
-<button type="submit" class="btn btn-block btn-primary">Submit</button>
-       </form>
+
+
      </div>
    </div>
 
            </div>
-
-         </div>
-         <div class="row row-break">
-           <div class="col-12">
-
-
-           <div class="card w-100">
-             <div class="card-body">
-             <a href="update_data.php" type="button" class="btn btn-block btn-secondary">Update Data</a>
-             <a href="del_data.php" type="button" class="btn btn-block btn-danger">Delete Data</a>
-             <a href="view_data.php" type="button" class="btn btn-block btn-info">View Specific ID Data</a>
-             <a href="dataall_view.php" type="button" class="btn btn-block btn-info">View ALL Data</a>
-             </div>
-           </div>
-         </div>
          </div>
          <div class="row row-break">
            <div class="col-12">
@@ -217,7 +192,8 @@ position: absolute;
          </div>
          <div class="row row-break">
            <div class="col-12" style="text-align: center">
-            <a type="button" href="#bgimg" class="btn btn-info shadow-sm" style="margin-right:10px;">View Background Video</a> <br> <br>
+            <a type="button" href="index.php" class="btn btn-info shadow-sm" style="">Back To INDEX</a> <br> <br>
+            <a type="button" href="#bgimg" class="btn btn-info shadow-sm" style="margin-top:10px">View Background Video</a> <br>
             <h3 style="color:white;">ชาติ ศาสนา อาจารย์จุ๋ม</h3> <br>
             <img class="rounded shadow" src="img/tjum12.jpg" style="max-width:350px" width="100%" alt="">
            </div>
@@ -227,8 +203,8 @@ position: absolute;
          <a href="#start"><button type="button" class="btn btn-outline-light" style="opacity:0.5;">Back To Top</button></a>
          <br> <br>
          <a name="bgimg"></a> <h4 style="color:rgba(0,0,0,0.5)">For View BackgrounD</h4>
-       </div>
 
+       </div>
        </div>
        <?php
       /* $n1 = "Siwadol Malisorn";

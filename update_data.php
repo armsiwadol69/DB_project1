@@ -29,6 +29,9 @@
 <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
 <meta name="theme-color" content="#ffffff">
 <style media="screen">
+  .btn-be {margin-left: 10px;}
+</style>
+<style media="screen">
 .file {
 visibility: hidden;
 position: absolute;
@@ -53,7 +56,7 @@ position: absolute;
         player = new YT.Player('player', {
           height: '1920',
           width: '1080',
-          videoId: '4QXCPuwBz2E',
+          videoId: 'E2b_bvTbDz8',
           events: {
             'onReady': onPlayerReady,
             'onStateChange': onPlayerStateChange
@@ -63,7 +66,7 @@ position: absolute;
        'controls': 0,
        'rel' : 0,
        'fs' : 0,
-       'playlist': '4QXCPuwBz2E',
+       'playlist': 'E2b_bvTbDz8',
        'loop' : 1,
 
    },
@@ -85,7 +88,7 @@ position: absolute;
     </div>
   </div>
     <nav class="navbar navbar-dark shadow">
-         <a class="navbar-brand" href="index.php">
+         <a class="navbar-brand" href="index.php" >
            <img src="favicon\favicon-96x96.png" width="30" height="30" class="d-inline-block align-top rounded" alt="" loading="lazy" hidden>
            Register BETA | SiX BLANCNEIGE | ACP II
          </a>
@@ -104,15 +107,15 @@ position: absolute;
        </nav>
        <div class="jumbotron jumbotron-fluid" style="background:rgba(255,255,255,0.1)">
          <div class="container">
-           <h1 class="display-4 text-white">Register BETA</h1>
-           <p class="lead text-white">Fill all box below!</p>
+           <h1 class="display-4 text-white">Register BETA : UPDATE</h1>
+           <p class="lead text-white">Student ID MUST MATCH <strong>EXIST</strong> DATA.</p>
          </div>
        </div>
        <div class="container">
          <div class="row row-break">
            <div class="col-12">
              <div class="alert alert-warning" role="alert">
-     Now playing : ツユ - あの世行きのバスに乗ってさらば。
+     ツユ - 太陽になれるかな
    </div>
            </div>
          </div>
@@ -122,7 +125,7 @@ position: absolute;
              <div class="card w-100 h-100">
      <div class="card-body">
 
-         <form method="post" action="submit_re.php">
+         <form method="post" action="submit_up.php">
          <div class="form-row">
            <div class="form-group col-md-4">
              <label for="idstd">Student ID</label>
@@ -196,20 +199,6 @@ position: absolute;
          </div>
          <div class="row row-break">
            <div class="col-12">
-
-
-           <div class="card w-100">
-             <div class="card-body">
-             <a href="update_data.php" type="button" class="btn btn-block btn-secondary">Update Data</a>
-             <a href="del_data.php" type="button" class="btn btn-block btn-danger">Delete Data</a>
-             <a href="view_data.php" type="button" class="btn btn-block btn-info">View Specific ID Data</a>
-             <a href="dataall_view.php" type="button" class="btn btn-block btn-info">View ALL Data</a>
-             </div>
-           </div>
-         </div>
-         </div>
-         <div class="row row-break">
-           <div class="col-12">
              <div class="alert alert-info" role="alert">
      Siwadol M. | ACP II
    </div>
@@ -217,6 +206,7 @@ position: absolute;
          </div>
          <div class="row row-break">
            <div class="col-12" style="text-align: center">
+             <a type="button" href="index.php" class="btn btn-info shadow-sm" style="">Back To INDEX</a> <br> <br>
             <a type="button" href="#bgimg" class="btn btn-info shadow-sm" style="margin-right:10px;">View Background Video</a> <br> <br>
             <h3 style="color:white;">ชาติ ศาสนา อาจารย์จุ๋ม</h3> <br>
             <img class="rounded shadow" src="img/tjum12.jpg" style="max-width:350px" width="100%" alt="">
@@ -227,8 +217,8 @@ position: absolute;
          <a href="#start"><button type="button" class="btn btn-outline-light" style="opacity:0.5;">Back To Top</button></a>
          <br> <br>
          <a name="bgimg"></a> <h4 style="color:rgba(0,0,0,0.5)">For View BackgrounD</h4>
-       </div>
 
+       </div>
        </div>
        <?php
       /* $n1 = "Siwadol Malisorn";
