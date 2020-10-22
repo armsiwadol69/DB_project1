@@ -135,11 +135,33 @@ position: absolute;
              <label for="idstd">MUST MATCH!</label>
              <input type="text" readonly class="form-control-plaintext" value="Student ID MUST MACTH EXIST DATA.">
            </div>
-<button type="submit" class="btn btn-block btn-danger">DELETE</button>
+<button type="button" class="btn btn-danger btn-block" data-toggle="modal" data-target="#Del_1" action="post">
+  DELETE
+</button>
+<div class="modal fade" id="Del_1" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="Del_1">Delete Data Record</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        This will delete the data whose student ID matches. <br> Are you sure?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-danger">DELETE</button>
+      </div>
+    </div>
+  </div>
+</div>
        </form>
      </div>
    </div>
-           </div>
+  </div>
+
 
 
          <div class="row row-break">
@@ -222,5 +244,6 @@ $('input[type="file"]').change(function(e) {
 });
 
      </script>
+
   </body>
 </html>

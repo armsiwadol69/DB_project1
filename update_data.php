@@ -189,7 +189,28 @@ position: absolute;
   <img src="https://placehold.it/80x80" id="preview" class="img-thumbnail">
 </div>
 <br>
-<button type="submit" class="btn btn-block btn-primary">Submit</button>
+<button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#update_1" action="post">
+  UPDATE
+</button>
+<div class="modal fade" id="update_1" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="Del_1">Update Data Record</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        This will update the data whose student ID matches. <br> Are you sure?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">Update</button>
+      </div>
+    </div>
+  </div>
+</div>
        </form>
      </div>
    </div>
