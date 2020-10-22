@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.3
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 19, 2020 at 11:08 AM
+-- Generation Time: Oct 21, 2020 at 03:51 PM
 -- Server version: 10.4.14-MariaDB
--- PHP Version: 7.4.11
+-- PHP Version: 7.4.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `memner`
+-- Database: `member`
 --
 
 -- --------------------------------------------------------
@@ -45,13 +45,11 @@ CREATE TABLE `student_data` (
 --
 
 INSERT INTO `student_data` (`idstd`, `name`, `sname`, `nickname`, `sex`, `email`, `age`, `birthday`, `password`, `picture`) VALUES
-('1162108060176', 'Siwadol', 'Malisorn', 'Si', 'M', 'armsiwadol2543@gmail.com', 20, '2000-05-12', 'plzkillme69', 'si.jpg'),
+('', '', '', '', 'C', '', 0, '0000-00-00', '', ''),
+('1162108060176', 'Siwa', 'Ma', 'ko', 'O', 'armsiwadol2000@gmail.com', 69, '1854-12-21', 'dsdasd', '110.jpg'),
 ('1162108060450', 'Siwadol', 'Malisorn', 'dasda', 'F', 'armsiwadol2543@gmail.com', 20, '2102-02-05', 'dswdfef', ''),
-('1162108060520', 'PonZA', 'KillThisLove', 'POPza', 'F', 'lopodlow410@gmail.com', 17, '1996-01-25', 'ilikeCAT', 'tjum12.jpg'),
-('1162108060985', 'John', 'Serv', 'O', 'M', 'asdasd@ghmao1.com', 85, '1895-12-05', 'POWER555', 'tjum12.jpg'),
 ('1162108060989', 'John', 'Serv', 'Opp', 'M', 'asdasd@ghmao1.com', 85, '1895-12-05', 'POWER555', 'tjum12.jpg'),
-('1165250125145', 'NutLoveMom', 'IlikeCat', 'Nutz', 'M', 'nutza007@hotmail.com', 69, '1999-02-16', 'LoveRedGuiter', 'farvo.png'),
-('9162108060989', 'Johny', 'Serv', 'Opp', 'M', 'asdasd@ghmao1.com', 85, '1895-12-05', 'POWER555', 'tjum12.jpg');
+('1234567891023', 'manop', 'isruy', 'ray', 'F', 'jiraratym@gmail.com', 12, '1581-01-19', 'dsdsdsdsdasdfas', '118932016_1029572874');
 
 --
 -- Indexes for dumped tables
